@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "hex_size": 32,
+    "cols": 12,
+    "rows": 8,
+    "coord_system": "axial",
+    "orientation": "pointy",
+    "background": {
+      "type": "solid",
+      "color": [48, 64, 40],
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "terrain": {
+    "0,0": {"terrain_key": "teren_płaski", "move_mod": 0, "defense_mod": 0},
+    "0,1": {"terrain_key": "las", "move_mod": 1, "defense_mod": 1},
+    "1,0": {"terrain_key": "mała rzeka", "move_mod": 1, "defense_mod": -1},
+    "1,1": {"terrain_key": "teren_płaski", "move_mod": 0, "defense_mod": 0},
+    "2,0": {"terrain_key": "bagno", "move_mod": 2, "defense_mod": 0},
+    "2,1": {"terrain_key": "miasto", "move_mod": 0, "defense_mod": 2, "type": "miasto", "value": 40}
+  },
+  "spawn_points": {
+    "Poland": ["0,0"],
+    "Germany": ["2,1"]
+  },
+  "key_points": {
+    "2,1": {"type": "miasto", "value": 40},
+    "0,1": {"type": "most", "value": 20}
+  }
+}

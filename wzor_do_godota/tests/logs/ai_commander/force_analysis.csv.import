@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://r2iwhv8kb567"
+
+[deps]
+
+files=["res://wzor_do_godota/tests/logs/ai_commander/force_analysis.turn.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.nation.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.urgency.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.total.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.combat.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.threat.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.force.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.immediate.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.fuel.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.fuel.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.avg.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.supply.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.infantry.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.armor.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.artillery.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.recon.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.supply.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.priority.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.priority.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.priority.translation"]
+
+source_file="res://wzor_do_godota/tests/logs/ai_commander/force_analysis.csv"
+dest_files=["res://wzor_do_godota/tests/logs/ai_commander/force_analysis.turn.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.nation.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.urgency.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.total.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.combat.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.threat.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.force.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.immediate.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.fuel.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.fuel.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.avg.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.supply.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.infantry.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.armor.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.artillery.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.recon.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.supply.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.priority.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.priority.translation", "res://wzor_do_godota/tests/logs/ai_commander/force_analysis.priority.translation"]
+
+[params]
+
+compress=true
+delimiter=0

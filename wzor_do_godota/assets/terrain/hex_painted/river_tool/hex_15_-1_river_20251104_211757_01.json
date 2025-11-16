@@ -1,0 +1,99 @@
+{
+  "grid": 64,
+  "entry_side": "top_right",
+  "exit_side": "bottom_left",
+  "seed": 9793,
+  "background": null,
+  "start": {
+    "x": 55.625,
+    "y": 18.36009989039509
+  },
+  "end": {
+    "x": 8.375,
+    "y": 45.63990010960491
+  },
+  "shape": "curve",
+  "shape_strength": 0.45,
+  "shape_direction": null,
+  "shape_direction_mode": "auto",
+  "noise_amplitude": 0.18,
+  "noise_frequency": 1.8,
+  "noise_applied": true,
+  "shape_metadata": {
+    "control_points": [
+      {
+        "x": 55.625,
+        "y": 18.36009989039509
+      },
+      {
+        "x": 29.541636514796668,
+        "y": 37.67183681994809
+      },
+      {
+        "x": 34.458363485203336,
+        "y": 26.32816318005191
+      },
+      {
+        "x": 8.375,
+        "y": 45.63990010960491
+      }
+    ],
+    "handle_lengths": {
+      "entry": 32.45435308148199,
+      "exit": 32.454353081482
+    },
+    "entry_inward": {
+      "x": -0.8660254037844386,
+      "y": 0.5
+    },
+    "exit_inward": {
+      "x": 0.8660254037844386,
+      "y": -0.5
+    },
+    "span_direction": {
+      "x": -0.8660254037844386,
+      "y": 0.5
+    },
+    "lateral": {
+      "x": 3.6827730295933256,
+      "y": 6.37875
+    },
+    "lateral_sign": -1,
+    "noise": {
+      "applied": true,
+      "amplitude": 0.18,
+      "frequency": 1.8,
+      "seed": 9793,
+      "max_offset_px": 0.9216,
+      "offset_stats": {
+        "min": 0.0,
+        "max": 0.2178586884977658,
+        "median": 0.19316244936564345
+      }
+    }
+  },
+  "centerline_cell_count": 49,
+  "centerline_banks": {
+    "offset": 2.325,
+    "effective_offset": 6.9750000000000005,
+    "color": {
+      "rgba": [
+        214,
+        192,
+        138,
+        255
+      ],
+      "hex": "#D6C08AFF"
+    },
+    "variation": 0.357,
+    "effective_variation": 1.071,
+    "left_cell_count": 49,
+    "right_cell_count": 48
+  },
+  "tributary_present": false,
+  "tributary": null,
+  "water_depth_noise": {
+    "seed": 9793,
+    "strength": 0.32
+  }
+}

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba1gce1mdd3ll"]
+
+[ext_resource type="Script" uid="uid://cyjcgwih2dcwt" path="res://scripts/hex_grid_template.gd" id="1"]
+[ext_resource type="Script" uid="uid://df3rc8p4htilt" path="res://scripts/camera_controller_template.gd" id="2"]
+
+[node name="Main" type="Node2D"]
+
+[node name="HexGrid" type="Node2D" parent="."]
+script = ExtResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="CameraController" type="Node" parent="."]
+script = ExtResource("2")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InfoLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 360.0
+offset_bottom = 120.0
+text = "Kliknij heks, aby podświetlić
++/- i drag = kamera"

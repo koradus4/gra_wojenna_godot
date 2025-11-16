@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pm8xtllmo641"
+
+[deps]
+
+files=["res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.request.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.commander.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.nation.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.turn.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.urgency.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.threat.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.force.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.current.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.current.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.infantry.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.armor.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.artillery.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.recon.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.supply.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.total.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.justification.translation"]
+
+source_file="res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.csv"
+dest_files=["res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.request.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.commander.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.nation.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.turn.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.urgency.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.threat.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.force.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.current.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.current.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.infantry.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.armor.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.artillery.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.recon.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.supply.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.total.translation", "res://wzor_do_godota/tests/logs/ai_commander/reinforcement_requests.justification.translation"]
+
+[params]
+
+compress=true
+delimiter=0
