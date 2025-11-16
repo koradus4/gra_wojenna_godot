@@ -2,8 +2,14 @@
 # Uruchom z poziomu folderu gra_wojenna
 
 param(
-    [string]$CommitMessage = "Update: Godot hex map implementation"
+    [string]$CommitMessage = ""
 )
+
+# Automatyczny komunikat z datą i godziną (po polsku)
+if ([string]::IsNullOrEmpty($CommitMessage)) {
+    $data = Get-Date -Format "yyyy-MM-dd HH:mm"
+    $CommitMessage = "Aktualizacja: $data - zmiany w projekcie Godot"
+}
 
 Write-Host "=== Eksport projektu Godot na GitHub ===" -ForegroundColor Cyan
 
