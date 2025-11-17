@@ -2,49 +2,85 @@
 # Uruchom z poziomu folderu gra_wojenna
 
 param(
-    [string]$CommitMessage = ""
+    [string]$CommitMessage = "",
+    [string]$Branch = "",
+    [string]$Remote = "origin",
+    [switch]$Force,
+    [switch]$ForcePush
 )
 
-# Automatyczny komunikat z datą i godziną (po polsku)
-if ([string]::IsNullOrEmpty($CommitMessage)) {
-    $data = Get-Date -Format "yyyy-MM-dd HH:mm"
-    $CommitMessage = "Aktualizacja: $data - zmiany w projekcie Godot"
+if ([string]::IsNullOrWhiteSpace($CommitMessage)) {
+    $CommitMessage = "Auto backup: " + (Get-Date -Format "yyyy-MM-dd_HH-mm-ss")
 }
 
 Write-Host "=== Eksport projektu Godot na GitHub ===" -ForegroundColor Cyan
 
-# Sprawdź czy jesteśmy w repozytorium git
-if (-not (Test-Path ".git")) {
-    Write-Host "BŁĄD: Nie znaleziono repozytorium git!" -ForegroundColor Red
-    Write-Host "Inicjalizuję nowe repozytorium..." -ForegroundColor Yellow
-    git init
-    Write-Host "Dodaj remote: git remote add origin <URL>" -ForegroundColor Yellow
-    exit
+function RunGit {
+    param(
+        [string]$Args,
+        [switch]$Silent
+    )
+    Write-Host "> git $Args" -ForegroundColor DarkGray
+    $output = Invoke-Expression "git $Args"
+    if (-not $Silent -and $output) { $output }
+    return $LASTEXITCODE
 }
 
-# Sprawdź status
+if (-not (Test-Path ".git")) {
+    Write-Host "Nie znaleziono repozytorium git – uruchom skrypt w katalogu głównym projektu." -ForegroundColor Red
+    exit 1
+}
+
+if (-not $Branch) {
+    $Branch = (git rev-parse --abbrev-ref HEAD 2>$null).Trim()
+    if (-not $Branch) { $Branch = "main" }
+}
+Write-Host "Gałąź: $Branch" -ForegroundColor Cyan
+
 Write-Host "`nStatus repozytorium:" -ForegroundColor Green
 git status
 
-# Dodaj wszystkie pliki
-Write-Host "`nDodawanie plików..." -ForegroundColor Green
-git add .
-
-# Commit
-Write-Host "`nTworzenie commita: $CommitMessage" -ForegroundColor Green
-git commit -m $CommitMessage
-
-# Push
-Write-Host "`nWysyłanie na GitHub..." -ForegroundColor Green
-git push origin main
-
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "`n✓ Projekt pomyślnie wysłany na GitHub!" -ForegroundColor Green
-} else {
-    Write-Host "`n✗ Błąd podczas wysyłania. Sprawdź konfigurację remote." -ForegroundColor Red
-    Write-Host "Użyj: git remote -v aby sprawdzić remote" -ForegroundColor Yellow
+function WorkingTreeDirty {
+    $status = git status --porcelain
+    return [bool]$status
 }
 
-# Pokaż ostatni commit
-Write-Host "`nOstatni commit:" -ForegroundColor Cyan
+$dirty = WorkingTreeDirty
+if ($dirty) {
+    Write-Host "Dodawanie zmian (git add -A)..." -ForegroundColor Green
+    RunGit "add -A" | Out-Null
+} else {
+    Write-Host "Brak zmian w working tree." -ForegroundColor Yellow
+}
+
+$staged = (git diff --cached --name-only).Trim()
+if ($staged) {
+    $commitSafe = $CommitMessage -replace "'","''"
+    Write-Host "Tworzenie commita: $CommitMessage" -ForegroundColor Green
+    RunGit "commit -m '$commitSafe'" | Out-Null
+} elseif ($ForcePush) {
+    Write-Host "ForcePush bez staged zmian – commit pominięty." -ForegroundColor Yellow
+} else {
+    Write-Host "Brak staged zmian – nic do commitowania." -ForegroundColor Yellow
+}
+
+$remoteList = (git remote) -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+if ($remoteList -notcontains $Remote) {
+    Write-Host "Remote '$Remote' nie istnieje. Skonfiguruj go poleceniem: git remote add $Remote <twoj_URL>" -ForegroundColor Red
+    exit 1
+}
+
+$pushCmd = "push $Remote $Branch"
+if ($Force) { $pushCmd += " --force-with-lease" }
+Write-Host "Wysyłanie: git $pushCmd" -ForegroundColor Green
+RunGit $pushCmd | Out-Null
+
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "✓ Push zakończony sukcesem" -ForegroundColor Green
+} else {
+    Write-Host "✗ Push nieudany – sprawdź log powyżej" -ForegroundColor Red
+    exit $LASTEXITCODE
+}
+
+Write-Host "Ostatni commit:" -ForegroundColor Cyan
 git log -1 --oneline

@@ -87,6 +87,23 @@ func set_highlighted(enabled: bool):
 		highlight_polygon.visible = enabled
 
 func _get_terrain_color() -> Color:
+	# Najpierw sprawdź type (z JSON)
+	if tile_type:
+		match tile_type:
+			"plains":
+				return Color(0.57, 0.66, 0.42, 0.5)
+			"forest":
+				return Color(0.25, 0.45, 0.25, 0.65)
+			"mountains":
+				return Color(0.45, 0.36, 0.28, 0.6)
+			"water":
+				return Color(0.2, 0.4, 0.75, 0.6)
+			"swamp":
+				return Color(0.38, 0.45, 0.35, 0.6)
+			"city":
+				return Color(0.53, 0.48, 0.46, 0.6)
+	
+	# Fallback na terrain_key (legacy)
 	match terrain_key:
 		"teren_płaski":
 			return Color(0.57, 0.66, 0.42, 0.5)

@@ -13,15 +13,14 @@ static func get_hex_vertices(center: Vector2, hex_size: float) -> PackedVector2A
 	return vertices
 
 static func axial_to_pixel(q: int, r: int, hex_size: float) -> Vector2:
-	# Flat-top offset columns: nieparzyste kolumny przesunięte w dół
-	# Dla flat-top: width = 2*size, height = size*√3
+	# Flat-top axial coordinates (prostokątna mapa)
+	# Każdy hex: width = 2*size, height = size*√3
 	var hex_height := hex_size * SQRT3
 	var column_spacing := 1.5 * hex_size
 	
+	# Axial: każda kolumna to 1.5*size w prawo, każdy wiersz to √3*size w dół
 	var x := q * column_spacing
-	var y := r * hex_height
-	if q % 2 == 1:
-		y += hex_height / 2.0
+	var y := r * hex_height + (q % 2) * (hex_height / 2.0)
 	
 	return Vector2(x, y)
 
