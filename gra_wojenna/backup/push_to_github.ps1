@@ -31,6 +31,7 @@ if (-not (Test-Path ".git")) {
     exit 1
 }
 
+# Ustal gałąź
 if (-not $Branch) {
     $Branch = (git rev-parse --abbrev-ref HEAD 2>$null).Trim()
     if (-not $Branch) { $Branch = "main" }
